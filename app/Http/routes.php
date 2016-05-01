@@ -57,6 +57,11 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'SessionsController@destroy'
 	]);
 
+	Route::post('comments', [
+		'as' => 'comment_path',
+		'uses' => 'CommentsController@store'
+	]);
+
 	Route::get('statuses',[
 		'as' => 'statuses_path',
 		'uses' =>  'StatusesController@index'

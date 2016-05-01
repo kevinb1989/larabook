@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories;
 
+use App\Comment;
 use App\Status;
 use App\User;
 use Auth;
@@ -23,7 +24,15 @@ class StatusesRepository{
 		$userIds = $user->follows()->lists('followed_id')->toArray();
 		$userIds[] = $user->id;
 
-		return Status::whereIn('user_id', $userIds)->latest()->get();
+		return Status::with('comments')->whereIn('user_id', $userIds)->latest()->get();
+	}
+
+	public function leaveComment($userId, $statusId, $body){
+		$comment = Comment::leave($body, $statusId);
+
+		User::findOrFail($userId)->comments()->save($comment);
+
+		return $comment;
 	}
 
 }

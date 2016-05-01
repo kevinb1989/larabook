@@ -14,6 +14,6 @@ class StatusesDatabaseSeeder extends Seeder
     {
     	//$users = User::lists('id'); 
 
-        factory('App\Status', 10)->create();
+        factory('App\Status', 100)->create();
     }
 }

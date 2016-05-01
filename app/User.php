@@ -57,5 +57,9 @@ class User extends Authenticatable implements PresentableInterface{
         return $this->email == $user->email;
     }
 
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
+
     
 }
