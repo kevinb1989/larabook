@@ -5,6 +5,12 @@ use App\User;
 
 class UserRepository{
 
+	/**
+	 * Register a new user
+	 * 
+	 * @param  App\User $user
+	 * @return void
+	 */
 	public function save(User $user){
 
 		return $user->save();

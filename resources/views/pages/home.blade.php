@@ -3,8 +3,8 @@
 @section('content')
 	<div class="jumbotron">
         <h1>Larabook</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>Larabook is a social networking site for Laravel developers which is very similar to facebook.</p>
+        <p>New features will be constantly updated for this site.</p>
         <p>
         @if(Auth::guest())
           {{link_to_route('register_path', 'Sign Up', null, ['class'=>'btn btn-lg btn-primary'])}}
